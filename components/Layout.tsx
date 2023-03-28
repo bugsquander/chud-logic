@@ -2,8 +2,8 @@ import { PropsWithChildren } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import Navbar from '@/components/ui/Navbar';
-import Footer from '@/components/ui/Footer';
+import Header from '../components/ui/header';
+import Footer from '../components/ui/footer';
 
 import { PageMeta } from '../types';
 
@@ -14,8 +14,8 @@ interface Props extends PropsWithChildren {
 export default function Layout({ children, meta: pageMeta }: Props) {
   const router = useRouter();
   const meta = {
-    title: 'Next.js Subscription Starter',
-    description: 'Brought to you by Vercel, Stripe, and Supabase.',
+    title: 'Chud Logic',
+    description: 'Chud Logic website design v0.1.6',
     cardImage: '/og.png',
     ...pageMeta
   };
@@ -42,9 +42,11 @@ export default function Layout({ children, meta: pageMeta }: Props) {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.cardImage} />
       </Head>
-      <Navbar />
+      <div className="container">
+      <Header />
       <main id="skip">{children}</main>
       <Footer />
+      </div>
     </>
   );
 }

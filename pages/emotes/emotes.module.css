@@ -1,0 +1,55 @@
+.grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+.item {
+  flex-basis: 10%;
+  margin-bottom: 10px;
+}
+.emote input,
+.emote textarea {
+  color: #000;
+  padding: 5px;
+}
+.emote button {
+  background-color: #fff;
+  color: #000;
+  padding: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.emote img {
+  width: 100px;
+  height: 100px;
+}
+.emote .delete {
+  cursor: pointer;
+}
+.emote div {
+}
+.buttons {
+  margin-bottom: 20px;
+}
+.buttons button {
+  background-color: #fff;
+  color: #000;
+  padding: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.create {
+}
+.orderbycreate {
+}
+.orderbytitle {
+}
+.image {
+}
+.title {
+}
+.shortcut {
+}

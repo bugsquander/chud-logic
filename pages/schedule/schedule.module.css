@@ -1,0 +1,16 @@
+:root .calendar {
+  --fc-list-event-dot-width: 10px;
+  --fc-list-event-hover-bg-color: transparent;
+  --fc-border-color: transparent;
+  --fc-page-bg-color: transparent;
+  --fc-neutral-bg-color: rgba(208, 208, 208, 0.3);
+  --fc-button-bg-color: #ccc;
+  --fc-button-border-color: #999;
+  --fc-button-hover-bg-color: #bbb;
+  --fc-button-hover-border-color: #aaa;
+  --fc-button-active-bg-color: #ddd;
+  --fc-button-active-border-color: #ccc;
+  width: 30%;
+  height: 100%;
+}
+

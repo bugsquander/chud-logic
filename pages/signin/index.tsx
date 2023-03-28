@@ -3,8 +3,7 @@ import { useEffect } from 'react';
 import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react';
 import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
-
-import LoadingDots from '@/components/ui/LoadingDots';
+import LoadingDots from '@/components/ui/loadingdots';
 import Logo from '@/components/icons/Logo';
 import { getURL } from '@/utils/helpers';
 
@@ -23,13 +22,10 @@ const SignIn = () => {
     return (
       <div className="flex justify-center height-screen-helper">
         <div className="flex flex-col justify-between max-w-lg p-3 m-auto w-80 ">
-          <div className="flex justify-center pb-12 ">
-            <Logo width="64px" height="64px" />
-          </div>
-          <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4">
             <Auth
               supabaseClient={supabaseClient}
-              providers={['github']}
+              providers={['google', 'twitch', 'discord']}
               redirectTo={getURL()}
               magicLink={true}
               appearance={{

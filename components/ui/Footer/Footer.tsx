@@ -1,112 +1,113 @@
-import Link from 'next/link';
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTwitch,
+  faYoutube,
+  faTwitter,
+  faDiscord,
+  faRedditAlien,
+  faPatreon,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faEnvelope,
+  faClipboardList,
+  faSkull,
+} from "@fortawesome/free-solid-svg-icons";
+import styles from "@/styles/footer.module.css";
 
-import Logo from '@/components/icons/Logo';
-import GitHub from '@/components/icons/GitHub';
-
-import s from './Footer.module.css';
-
-export default function Footer() {
+const Footer = () => {
   return (
-    <footer className="mx-auto max-w-[1920px] px-6 bg-zinc-900">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 border-b border-zinc-600 py-12 text-white transition-colors duration-150 bg-zinc-900">
-        <div className="col-span-1 lg:col-span-2">
+    <footer className={styles.footer}>
+      <div className={styles.links}>
+        <span className={styles.nation}>
+          <span className={styles.green}>Chud</span>
+          <span className={styles.white}>Nation</span>
+        </span>
+        <span className={styles.twitch}>
           <Link
-            href="/"
-            className="flex flex-initial items-center font-bold md:mr-24"
+            href="https://www.twitch.tv/chudlogic"
+            aria-label="Twitch"
+            title="Twitch"
           >
-            <span className="rounded-full border border-zinc-700 mr-2">
-              <Logo />
-            </span>
-            <span>ACME</span>
+            <FontAwesomeIcon icon={faTwitch} />
           </Link>
-        </div>
-        <div className="col-span-1 lg:col-span-2">
-          <ul className="flex flex-initial flex-col md:flex-1">
-            <li className="py-3 md:py-0 md:pb-4">
-              <Link
-                href="/"
-                className="text-white hover:text-zinc-200 transition ease-in-out duration-150"
-              >
-                Home
-              </Link>
-            </li>
-            <li className="py-3 md:py-0 md:pb-4">
-              <Link
-                href="/"
-                className="text-white hover:text-zinc-200 transition ease-in-out duration-150"
-              >
-                About
-              </Link>
-            </li>
-            <li className="py-3 md:py-0 md:pb-4">
-              <Link
-                href="/"
-                className="text-white hover:text-zinc-200 transition ease-in-out duration-150"
-              >
-                Careers
-              </Link>
-            </li>
-            <li className="py-3 md:py-0 md:pb-4">
-              <Link
-                href="/"
-                className="text-white hover:text-zinc-200 transition ease-in-out duration-150"
-              >
-                Blog
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div className="col-span-1 lg:col-span-2">
-          <ul className="flex flex-initial flex-col md:flex-1">
-            <li className="py-3 md:py-0 md:pb-4">
-              <p className="text-white font-bold hover:text-zinc-200 transition ease-in-out duration-150">
-                LEGAL
-              </p>
-            </li>
-            <li className="py-3 md:py-0 md:pb-4">
-              <Link
-                href="/"
-                className="text-white hover:text-zinc-200 transition ease-in-out duration-150"
-              >
-                Privacy Policy
-              </Link>
-            </li>
-            <li className="py-3 md:py-0 md:pb-4">
-              <Link
-                href="/"
-                className="text-white hover:text-zinc-200 transition ease-in-out duration-150"
-              >
-                Terms of Use
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div className="col-span-1 lg:col-span-6 flex items-start lg:justify-end text-white">
-          <div className="flex space-x-6 items-center h-10">
-            <a
-              aria-label="Github Repository"
-              href="https://github.com/vercel/nextjs-subscription-payments"
-            >
-              <GitHub />
-            </a>
-          </div>
-        </div>
+        </span>
+        <span className={styles.youtube}>
+          <Link
+            href="https://www.youtube.com/@ChudLogic"
+            aria-label="YouTube"
+            title="YouTube"
+          >
+            <FontAwesomeIcon icon={faYoutube} />
+          </Link>
+        </span>
+        <span className={styles.twitter}>
+          <Link
+            href="https://twitter.com/IrrationalChad"
+            aria-label="Twitter"
+            title="Twitter"
+          >
+            <FontAwesomeIcon icon={faTwitter} />
+          </Link>
+        </span>
+        <span className={styles.discord}>
+          <Link
+            href="https://discord.gg/z72fPaKy3P"
+            aria-label="Discord"
+            title="Discord"
+          >
+            <FontAwesomeIcon icon={faDiscord} />
+          </Link>
+        </span>
+        <span className={styles.reddit}>
+          <Link
+            href="https://www.reddit.com/r/chudlogic/"
+            aria-label="Reddit"
+            title="Reddit"
+          >
+            <FontAwesomeIcon icon={faRedditAlien} />
+          </Link>
+        </span>
+        <span className={styles.patreon}>
+          <Link
+            href="https://www.patreon.com/chudlogic/"
+            aria-label="Patreon"
+            title="Patreon"
+          >
+            <FontAwesomeIcon icon={faPatreon} />
+          </Link>
+        </span>
       </div>
-      <div className="py-12 flex flex-col md:flex-row justify-between items-center space-y-4 bg-zinc-900">
-        <div>
-          <span>&copy; 2020 ACME, Inc. All rights reserved.</span>
-        </div>
-        <div className="flex items-center">
-          <span className="text-white">Crafted by</span>
-          <a href="https://vercel.com" aria-label="Vercel.com Link">
-            <img
-              src="/vercel.svg"
-              alt="Vercel.com Logo"
-              className="inline-block h-6 ml-4 text-white"
-            />
-          </a>
-        </div>
+      <div className={styles.appendix}>
+        <span className={styles.contact}>
+          <Link href="/contact" aria-label="Contact" title="Contact">
+            <span className={styles.icon}>
+              <FontAwesomeIcon icon={faEnvelope} />
+            </span>
+            <span className={styles.title}>Contact</span>
+          </Link>
+        </span>
+        <span className={styles.terms}>
+          <Link href="/terms" aria-label="Terms" title="Terms">
+            <span className={styles.icon}>
+              <FontAwesomeIcon icon={faClipboardList} />
+            </span>
+            <span className={styles.title}>Terms & Privacy</span>
+          </Link>
+        </span>
+        <span className={styles.site}>
+          <Link href="/terms" aria-label="site" title="site">
+            <span className={styles.icon}>
+              <FontAwesomeIcon icon={faSkull} />
+            </span>
+            <span className={styles.site}>
+              Site maintained by horrible people
+            </span>
+          </Link>
+        </span>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

@@ -1,0 +1,9 @@
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+.login a {
+    text-decoration: none;
+}

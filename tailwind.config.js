@@ -10,8 +10,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        vomit: {
+          500: '#adf500'
+        }
+      },  
       fontFamily: {
-        sans: ['var(--font-sans)', ...fontFamily.sans]
+        sans: ['var(--font-barlow)', ...fontFamily.sans],
       }
     }
   },

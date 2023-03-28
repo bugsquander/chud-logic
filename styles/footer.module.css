@@ -1,0 +1,84 @@
+.footer {
+    padding: 20px;
+    border-top: 1px solid #222;
+    background: rgba(0, 0, 0, 0.2);
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+      2px 2px 0 #000;
+  }
+  .footer a {
+    margin-right: 10px;
+  }
+  .footer span {
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+  
+  /* CHUD NATION */
+  
+  .links {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 5px;
+  }
+  .links a {
+    transition: 1s;
+  }
+  .links a:hover {
+    color: #adf500;
+  }
+  .nation {
+    grid-area: nation;
+  }
+  .green {
+    color: #adf500;
+    margin-right: 5px;
+  }
+  .white {
+    color: #fff;
+    margin-right: 10px;
+  }
+  .twitch,
+  .twitch a {
+    color: #6441a5;
+  }
+  .youtube,
+  .youtube a {
+    color: #c4302b;
+  }
+  .twitter,
+  .twitter a {
+    color: #00acee;
+  }
+  .discord,
+  .discord a {
+    color: #7289d9;
+  }
+  .reddit,
+  .reddit a {
+    color: #ff5700;
+  }
+  .patreon,
+  .patreon a {
+    color: #FF424D;
+  }
+  .appendix {
+    font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .appendix a {
+    color: #555;
+  }
+  .appendix a:hover {
+    text-decoration: none;
+    color: #666;
+  }
+  .appendix .icon {
+    color: #777;
+    margin-right: 5px;
+  }
+  
