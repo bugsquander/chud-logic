@@ -10,6 +10,8 @@ import type { Database } from 'types_db';
 
 import 'styles/global.css';
 import 'styles/chrome-bug.css';
+import 'pages/schedule/main.css';
+import 'pages/schedule/list.css';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
