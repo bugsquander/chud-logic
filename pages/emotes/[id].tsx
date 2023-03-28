@@ -66,9 +66,9 @@ const Emote = () => {
   const openWidget = () => {
     const widget = window.cloudinary.createUploadWidget(
       {
-        cloudName: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
         uploadSignature: generateSignature,
-        apiKey: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
+        apiKey: process.env.CLOUDINARY_API_KEY,
         uploadPreset: 'emotes',
         sources: ['local', 'url'],
         showAdvancedOptions: false,

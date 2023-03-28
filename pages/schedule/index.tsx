@@ -18,23 +18,6 @@ export default function Schedule() {
     return <></>;
   }
 
-  async function googleSignIn() {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        scopes: 'https://www.googleapis.com/auth/calendar'
-      }
-    });
-    if (error) {
-      alert('Error logging in to Google provider with Supabase');
-      console.log(error);
-    }
-  }
-
-  async function signOut() {
-    await supabase.auth.signOut();
-  }
-
   return (
     <>
       {session ? (
@@ -48,9 +31,9 @@ export default function Schedule() {
           nowIndicator={true}
           selectable={false}
           height="100%"
-          googleCalendarApiKey={process.env.NEXT_PUBLIC_GOOGLE_API_KEY}
+          googleCalendarApiKey={process.env.GOOGLE_API_KEY}
           eventSources={[
-            { googleCalendarId: process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_ID }
+            { googleCalendarId: process.env.GOOGLE_CALENDAR_ID }
           ]}
         />
       </div>
@@ -66,9 +49,9 @@ export default function Schedule() {
           nowIndicator={true}
           selectable={false}
           height="100%"
-          googleCalendarApiKey={process.env.NEXT_PUBLIC_GOOGLE_API_KEY}
+          googleCalendarApiKey={process.env.GOOGLE_API_KEY}
           eventSources={[
-            { googleCalendarId: process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_ID }
+            { googleCalendarId: process.env.GOOGLE_CALENDAR_ID }
           ]}
         />
       </div>
