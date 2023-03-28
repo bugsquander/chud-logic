@@ -84,7 +84,7 @@ export default function Account({ user }: { user: User }) {
 
   return (
     <section className="">
-      <div className="p-4">
+      <div className="">
         <Card title="User Profile">
           <div className="text-xl mt-8 mb-4 font-semibold">
             {userDetails ? (
