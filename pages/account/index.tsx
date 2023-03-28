@@ -86,47 +86,15 @@ export default function Account({ user }: { user: User }) {
     <section className="">
       <div className="p-4">
         <Card
-          title="Subscription"
-          description={
-            subscription
-              ? `You currently have a ${subscription?.prices?.products?.name} subscription.`
-              : ''
-          }
-          footer={
-            <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-              <p className="pb-4 sm:pb-0">Manage your subscription.</p>
-              <Button
-                variant="slim"
-                loading={loading}
-                disabled={loading || !subscription}
-                onClick={redirectToCustomerPortal}
-              >
-                Open Stripe customer portal
-              </Button>
-            </div>
-          }
-        >
-          <div className="text-xl mt-8 mb-4 font-semibold">
-            {isLoading ? (
-              <div className="h-12 mb-6">
-                <LoadingDots />
-              </div>
-            ) : subscription ? (
-              `${subscriptionPrice}/${subscription?.prices?.interval}`
-            ) : (
-              <Link href="/">Choose your subscription</Link>
-            )}
-          </div>
-        </Card>
-        <Card
-          title="Avatar"
-          description="Upload/Edit your profile picture."
+          title="User Profile"
           footer={<p>All images will be cropped/display as a square.</p>}
         >
           <div className="text-xl mt-8 mb-4 font-semibold">
             {userDetails ? (
               <div>
                 <img id="uploadedimage" src={userDetails.avatar_url} />
+                <span>{userDetails.full_name}</span>
+                <span>{user ? user.email : undefined}</span>
               </div>
             ) : (
               <div className="h-8 mb-6">
@@ -162,8 +130,41 @@ export default function Account({ user }: { user: User }) {
             {user ? user.email : undefined}
           </p>
         </Card>
+
+        <Card
+          title="Subscription"
+          description={
+            subscription
+              ? `You currently have a ${subscription?.prices?.products?.name} subscription.`
+              : ''
+          }
+          footer={
+            <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
+              <p className="pb-4 sm:pb-0">Manage your subscription.</p>
+              <Button
+                variant="slim"
+                loading={loading}
+                disabled={loading || !subscription}
+                onClick={redirectToCustomerPortal}
+              >
+                Open Stripe customer portal
+              </Button>
+            </div>
+          }
+        >
+          <div className="text-xl mt-8 mb-4 font-semibold">
+            {isLoading ? (
+              <div className="h-12 mb-6">
+                <LoadingDots />
+              </div>
+            ) : subscription ? (
+              `${subscriptionPrice}/${subscription?.prices?.interval}`
+            ) : (
+              <Link href="/">Choose your subscription</Link>
+            )}
+          </div>
+        </Card>
       </div>
     </section>
   );
 }
-
