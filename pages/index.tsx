@@ -9,7 +9,7 @@ const YOUTUBE_PLAYLIST_ITEMS_API =
 
 export async function getStaticProps() {
   const res = await fetch(
-    `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=${process.env.YOUTUBE_PLAYLIST_ID}&maxResults=12&key=${process.env.GOOGLE_API_KEY}`
+    `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=${process.env.YOUTUBE_PLAYLIST_ID}&maxResults=12&key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`
   );
   const data = await res.json();
   return {

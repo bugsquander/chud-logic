@@ -20,43 +20,59 @@ export default function Schedule() {
 
   return (
     <>
-      {session ? (
-        <>
-      <div className={styles.calendar}>
-        <FullCalendar
-          plugins={[googleCalendarPlugin, listPlugin]}
-          initialView="listWeek"
-          weekends={true}
-          firstDay={1}
-          nowIndicator={true}
-          selectable={false}
-          height="100%"
-          googleCalendarApiKey={process.env.GOOGLE_API_KEY}
-          eventSources={[
-            { googleCalendarId: process.env.GOOGLE_CALENDAR_ID }
-          ]}
-        />
+      <div className="flex justify-center height-screen-helper">
+        <div className="flex flex-col justify-between max-w-lg p-3 m-auto w-120">
+          <div className="flex flex-col space-y-4">
+            {session ? (
+              <>
+                <div className={styles.calendar}>
+                  <FullCalendar
+                    plugins={[googleCalendarPlugin, listPlugin]}
+                    initialView="listWeek"
+                    weekends={true}
+                    firstDay={1}
+                    nowIndicator={true}
+                    selectable={false}
+                    height="100%"
+                    googleCalendarApiKey={
+                      process.env.NEXT_PUBLIC_GOOGLE_API_KEY
+                    }
+                    eventSources={[
+                      {
+                        googleCalendarId:
+                          process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_ID
+                      }
+                    ]}
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                <div className={styles.calendar}>
+                  <FullCalendar
+                    plugins={[googleCalendarPlugin, listPlugin]}
+                    initialView="listWeek"
+                    weekends={true}
+                    firstDay={1}
+                    nowIndicator={true}
+                    selectable={false}
+                    height="100%"
+                    googleCalendarApiKey={
+                      process.env.NEXT_PUBLIC_GOOGLE_API_KEY
+                    }
+                    eventSources={[
+                      {
+                        googleCalendarId:
+                          process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_ID
+                      }
+                    ]}
+                  />
+                </div>
+              </>
+            )}
+          </div>
+        </div>
       </div>
-        </>
-      ) : (
-        <>
-      <div className={styles.calendar}>
-        <FullCalendar
-          plugins={[googleCalendarPlugin, listPlugin]}
-          initialView="listWeek"
-          weekends={true}
-          firstDay={1}
-          nowIndicator={true}
-          selectable={false}
-          height="100%"
-          googleCalendarApiKey={process.env.GOOGLE_API_KEY}
-          eventSources={[
-            { googleCalendarId: process.env.GOOGLE_CALENDAR_ID }
-          ]}
-        />
-      </div>
-        </>
-      )}
     </>
   );
 }

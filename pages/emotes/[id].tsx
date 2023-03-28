@@ -114,7 +114,6 @@ const Emote = () => {
       />
 
       <div className={styles.emote}>
-        <img id="uploadedimage" src=""></img>
         <form>
           <div className={styles.image}>
             <img id="uploadedimage" src={url}></img>
@@ -126,19 +125,19 @@ const Emote = () => {
             onChange={(e) => setUrl(e.target.value)}
           />
           <div className={styles.title}>
-            <label htmlFor="title">Title:</label>
             <input
               type="text"
               id="title"
+              placeholder="Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
           <div className={styles.shortcut}>
-            <label htmlFor="shortcut">Shortcut:</label>
             <input
               type="text"
               id="shortcut"
+              placeholder="Shortcut"
               value={shortcut}
               onChange={(e) => setShortcut(e.target.value)}
             />

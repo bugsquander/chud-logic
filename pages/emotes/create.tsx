@@ -13,7 +13,7 @@ const CreateEmote = () => {
 
   const [title, setTitle] = useState('');
   const [shortcut, setShortcut] = useState('');
-  const [url, setUrl] = useState('');
+  const [url, setUrl] = useState(undefined);
   const [formError, setFormError] = useState(null);
 
   const handleSubmit = async (e) => {
@@ -101,19 +101,19 @@ const CreateEmote = () => {
             onChange={(e) => setUrl(e.target.value)}
           />
           <div className={styles.title}>
-            <label htmlFor="title">Title:</label>
             <input
               type="text"
               id="title"
+              placeholder="Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
           <div className={styles.shortcut}>
-            <label htmlFor="shortcut">Shortcut:</label>
             <input
               type="text"
               id="shortcut"
+              placeholder="Shortcut"
               value={shortcut}
               onChange={(e) => setShortcut(e.target.value)}
             />
