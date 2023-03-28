@@ -85,16 +85,15 @@ export default function Account({ user }: { user: User }) {
   return (
     <section className="">
       <div className="p-4">
-        <Card
-          title="User Profile"
-          footer={<p>All images will be cropped/display as a square.</p>}
-        >
+        <Card title="User Profile">
           <div className="text-xl mt-8 mb-4 font-semibold">
             {userDetails ? (
               <div>
-                <img id="uploadedimage" src={userDetails.avatar_url} />
-                <span>{userDetails.full_name}</span>
-                <span>{user ? user.email : undefined}</span>
+                <div>
+                  <img id="uploadedimage" src={userDetails.avatar_url} />
+                </div>
+                <div>{userDetails.full_name}</div>
+                <div>{user ? user.email : undefined}</div>
               </div>
             ) : (
               <div className="h-8 mb-6">
@@ -103,34 +102,6 @@ export default function Account({ user }: { user: User }) {
             )}
           </div>
         </Card>
-        <Card
-          title="Username"
-          description="Please enter your display name."
-          footer={<p>Please use 64 characters at maximum.</p>}
-        >
-          <div className="text-xl mt-8 mb-4 font-semibold">
-            {userDetails ? (
-              `${
-                userDetails.full_name ??
-                `${userDetails.first_name} ${userDetails.last_name}`
-              }`
-            ) : (
-              <div className="h-8 mb-6">
-                <LoadingDots />
-              </div>
-            )}
-          </div>
-        </Card>
-        <Card
-          title="Email"
-          description="Please enter the email address you want to use to login."
-          footer={<p>We will email you to verify the change.</p>}
-        >
-          <p className="text-xl mt-8 mb-4 font-semibold">
-            {user ? user.email : undefined}
-          </p>
-        </Card>
-
         <Card
           title="Subscription"
           description={
