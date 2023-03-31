@@ -1,5 +1,3 @@
-import styles from './terms.module.css';
-
 const Terms = () => {
   return (
     <>

@@ -4,7 +4,6 @@ import { withPageAuth } from '@supabase/auth-helpers-nextjs';
 import { useState } from 'react';
 import { generateSignature } from '../../utils/cloudinary-signature';
 import Script from 'next/script';
-import styles from './emotes.module.css';
 
 const CreateEmote = () => {
   const supabase = useSupabaseClient();
@@ -89,10 +88,10 @@ const CreateEmote = () => {
         type="text/javascript"
       />
 
-      <div className={styles.emote}>
+      <div>
         <form>
-          <div className={styles.image}>
-            <img id="uploadedimage" src={url}></img>
+          <div>
+            <img id="uploadedimage" src={url} className="w-[100px] h-[100px]"></img>
           </div>
           <input
             type="hidden"
@@ -100,31 +99,42 @@ const CreateEmote = () => {
             value={url}
             onChange={(e) => setUrl(e.target.value)}
           />
-          <div className={styles.title}>
+          <span>
+            <button
+              type="button"
+              onClick={openWidget}
+              className="font-bold text-base py-2 px-4 rounded bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600"
+            >
+              Add Image
+            </button>
+          </span>
+
+          <div>
             <input
               type="text"
               id="title"
               placeholder="Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+              className="block p-3 text-base text-white bg-transparent rounded-lg border border-gray-500 hover:border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
             />
           </div>
-          <div className={styles.shortcut}>
+          <div>
             <input
               type="text"
               id="shortcut"
               placeholder="Shortcut"
               value={shortcut}
               onChange={(e) => setShortcut(e.target.value)}
+              className="block p-3 text-base text-white bg-transparent rounded-lg border border-gray-500 hover:border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
             />
           </div>
-          <span className={styles.upload}>
-            <button type="button" onClick={openWidget}>
-              Add Image
-            </button>
-          </span>
-          <span className={styles.create}>
-            <button type="button" onClick={handleSubmit}>
+          <span>
+            <button
+              type="button"
+              onClick={handleSubmit}
+              className="font-bold text-base py-2 px-4 rounded bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600"
+            >
               Create Emote
             </button>
           </span>

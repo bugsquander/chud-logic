@@ -1,8 +1,7 @@
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Emote from '../../components/emotes/emote';
-import styles from './emotes.module.css';
+import Emote from '@/components/emotes/emote';
 
 const Emotes = () => {
   const supabase = useSupabaseClient();
@@ -45,48 +44,51 @@ const Emotes = () => {
 
   return (
     <>
-      <div className={styles.buttons}>
-        <span className={styles.create}>
-          <button
-            aria-label="Create Emote"
-            title="Create Emote"
-            onClick={handleClick}
-          >
-            Create Emote
-          </button>
-        </span>
-        <span>Order by: </span>
-        <span className={styles.orderbycreate}>
-          <button
-            aria-label="Order Emotes by Creation Date"
-            title="Order Emotes by Creation Date"
-            onClick={() => setOrderBy('created_at')}
-          >
-            Created
-          </button>
-        </span>
-        <span className={styles.orderbytitle}>
-          <button
-            aria-label="Order Emotes by Title"
-            title="Order Emotes by Title"
-            onClick={() => setOrderBy('title')}
-          >
-            Title
-          </button>
+      <div className="mb-5 flex justify-between ">
+          <span>
+            <button
+              aria-label="Create Emote"
+              title="Create Emote"
+              onClick={handleClick}
+              className="font-bold text-base py-2 px-4 rounded bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600"
+            >
+              Create Emote
+            </button>
+          </span>
+        <span className="space-x-2">
+          <span>Order by: </span>
+          <span>
+            <button
+              aria-label="Order Emotes by Creation Date"
+              title="Order Emotes by Creation Date"
+              onClick={() => setOrderBy('created_at')}
+              className="font-bold text-base py-2 px-4 rounded bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600"
+            >
+              Created
+            </button>
+          </span>
+          <span>
+            <button
+              aria-label="Order Emotes by Title"
+              title="Order Emotes by Title"
+              onClick={() => setOrderBy('title')}
+              className="font-bold text-base py-2 px-4 rounded bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600"
+            >
+              Title
+            </button>
+          </span>
         </span>
       </div>
-      <div className={styles.emote}>
         {fetchError && <p>{fetchError}</p>}
         {emotes && (
-          <div className={styles.grid}>
+          <div className="w-full flex flex-wrap justify-start items-center content-center">
             {emotes.map((emote) => (
-              <div className={styles.item} key={emote.id}>
+              <div className="basis-1/12" key={emote.id}>
                 <Emote key={emote.id} emote={emote} onDelete={handleDelete} />
               </div>
             ))}
           </div>
         )}
-      </div>
     </>
   );
 };

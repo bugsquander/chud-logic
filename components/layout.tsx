@@ -38,13 +38,12 @@ export default function Layout({ children, meta: pageMeta }: Props) {
         <meta property="og:image" content={meta.cardImage} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@vercel" />
-        <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.cardImage} />
       </Head>
-      <div className="container">
+      <div className="container bg-[url('/cartographer.png')] bg-repeat bg-fixed flex flex-col h-screen w-screen">
       <Header />
-      <main id="skip">{children}</main>
+      <main id="skip" className="flex-2 overflow-auto bg-gradient-to-t from-[rgba(13,12,12,0.2)] via-[rgba(60,60,60,0.2)] to-[rgba(13,12,12,0.2)] p-5">{children}</main>
       <Footer />
       </div>
     </>

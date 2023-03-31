@@ -1,5 +1,3 @@
-import styles from "./reddit.module.css";
-
 const reddit = "https://www.reddit.com";
 const subreddit = "r/chudlogic";
 
@@ -23,18 +21,18 @@ export async function getStaticProps() {
   };
 }
 
-export default function RedditIndex({ latest, about, hot }) {
+export default function Reddit({ latest, about, hot }) {
   return (
     <>
-        <div className={styles.about}>
+        <div>
           {[about].map((about) => {
             const { data = {} } = about;
             var date = new Date(data.created * 1000)
               .toUTCString()
               .substring(0, 50);
             return (
-              <div key={data.id} className={styles.about}>
-                <div className={styles.banner}>
+              <div key={data.id}>
+                <div>
                   <img src={data.mobile_banner_image} alt="" />
                 </div>
                 <div>
@@ -64,7 +62,7 @@ export default function RedditIndex({ latest, about, hot }) {
                         .toUTCString()
                         .substring(0, 50);
                       return (
-                        <div key={data.id} className={styles.posts}>
+                        <div key={data.id}>
                           <div>
                             <a href={`${reddit}${data.permalink}`}>
                               {data.title}
@@ -101,14 +99,14 @@ export default function RedditIndex({ latest, about, hot }) {
                         .toUTCString()
                         .substring(0, 50);
                       const getStyle = () => {
-                        if (data.link_flair_text == "Memes") return styles.memes;
-                        if (data.link_flair_text == "Drama") return styles.drama;
-                        if (data.link_flair_text == "Schizo") return styles.schizo;
-                        if (data.link_flair_text == "Discussion ") return styles.discussion;
-                        else return styles.blank;
+                        if (data.link_flair_text == "Memes") return 'bg-[#46d160]';
+                        if (data.link_flair_text == "Drama") return 'bg-[#7193ff]';
+                        if (data.link_flair_text == "Schizo") return 'bg-[#610a19]';
+                        if (data.link_flair_text == "Discussion ") return 'bg-[#ffd635]';
+                        else return '';
                       };
                       return (
-                        <div key={data.id} className={styles.posts}>
+                        <div key={data.id}>
                           <div>
                             <a href={`${reddit}${data.permalink}`}>
                               {data.title}

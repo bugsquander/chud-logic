@@ -2,7 +2,6 @@ import { useSupabaseClient } from '@supabase/auth-helpers-react';
 import { useEffect, useState } from 'react';
 import Announcement from '../../components/announcements/announcement';
 import { useRouter } from 'next/router';
-import styles from './announcements.module.css';
 
 const Announcements = () => {
   const supabase = useSupabaseClient();
@@ -45,42 +44,47 @@ const Announcements = () => {
 
   return (
     <>
-      <div className={styles.buttons}>
-        <span className={styles.create}>
+      <div className="mb-5 flex justify-between ">
+        <span>
           <button
             aria-label="Create Announcement"
             title="Create Announcement"
             onClick={handleClick}
+            className="font-bold text-base py-2 px-4 rounded bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600"
           >
             Create Announcement
           </button>
         </span>
-        <span>Order by: </span>
-        <span className={styles.orderbycreate}>
-          <button
-            aria-label="Order Announcements by Creation Date"
-            title="Order Announcements by Creation Date"
-            onClick={() => setOrderBy('created_at')}
-          >
-            Created
-          </button>
-        </span>
-        <span className={styles.orderbytitle}>
-          <button
-            aria-label="Order Announcements by Title"
-            title="Order Announcements by Title"
-            onClick={() => setOrderBy('title')}
-          >
-            Title
-          </button>
+        <span className="space-x-2">
+          <span>Order by: </span>
+          <span>
+            <button
+              aria-label="Order Announcements by Creation Date"
+              title="Order Announcements by Creation Date"
+              onClick={() => setOrderBy('created_at')}
+              className="font-bold text-base py-2 px-4 rounded bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600"
+            >
+              Created
+            </button>
+          </span>
+          <span>
+            <button
+              aria-label="Order Announcements by Title"
+              title="Order Announcements by Title"
+              onClick={() => setOrderBy('title')}
+              className="font-bold text-base py-2 px-4 rounded bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600"
+            >
+              Title
+            </button>
+          </span>
         </span>
       </div>
-      <div className={styles.announcement}>
+      <div>
         {fetchError && <p>{fetchError}</p>}
         {announcements && (
-          <div className={styles.grid}>
+          <div className="w-full flex flex-wrap justify-start items-center content-center gap-2.5 ">
             {announcements.map((announcement) => (
-              <div className={styles.item} key={announcement.id}>
+              <div key={announcement.id}>
                 <Announcement
                   key={announcement.id}
                   announcement={announcement}

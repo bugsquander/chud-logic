@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { TwitchEmbed } from 'react-twitch-embed';
-import styles from './stream.module.css';
 
 const Stream = () => {
   const embed = useRef();

@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
-import { useUser, useSupabaseClient } from "@supabase/auth-helpers-react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGear, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
-import styles from "@/styles/header.module.css";
+import { useState, useEffect } from 'react';
+import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 export default function SignedIn({ session }) {
   const supabase = useSupabaseClient();
@@ -18,9 +17,9 @@ export default function SignedIn({ session }) {
   async function getProfile() {
     try {
       let { data, error, status } = await supabase
-        .from("users")
+        .from('users')
         .select(`full_name, avatar_url`)
-        .eq("id", user.id)
+        .eq('id', user.id)
         .single();
 
       if (error && status !== 406) {
@@ -31,28 +30,38 @@ export default function SignedIn({ session }) {
         setAvatarUrl(data.avatar_url);
       }
     } catch (error) {
-      alert("Error loading user data!");
+      alert('Error loading user data!');
       console.log(error);
     }
   }
 
   return (
     <>
-      <div className={styles.panel}>
-        <div className={styles.user}>
+      <div className="flex flex-col flex-wrap content-between justify-between h-full">
+
+        <div className="flex justify-center">
           <Link href="/account" aria-label={username} title={username}>
-            <img src={avatar_url}></img>
+            <img
+              src={avatar_url}
+              height="48px"
+              width="48px"
+              className="flex items-center justify-center rounded-full border-2 border-vomit-500"
+            ></img>
           </Link>
         </div>
-        <div className={styles.signout}>
+
+        <div className="text-base">
           <Link
             href="#"
             onClick={() => supabase.auth.signOut()}
             aria-label="Sign Out"
             title="Sign Out"
           >
-            <FontAwesomeIcon icon={faRightFromBracket} className={styles.icon} />
-            <span className={styles.title}>Sign Out</span>
+            <FontAwesomeIcon
+              icon={faRightFromBracket}
+              className="mr-1 text-vomit-500"
+            />
+            <span>Sign Out</span>
           </Link>
         </div>
       </div>

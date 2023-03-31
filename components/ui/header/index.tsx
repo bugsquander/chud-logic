@@ -12,8 +12,6 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Register from './register';
 import Online from './online';
-import styles from '@/styles/header.module.css';
-import Script from 'next/script';
 
 const Header = () => {
   const router = useRouter();
@@ -32,70 +30,136 @@ const Header = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className={styles.header}>
-        <span className={styles.logo}>
-          <Online />
-          <span className={styles.name}>
-            <Link href="/" aria-label="Chud Logic" title="Chud Logic">
-              <span className={styles.green}>Chud</span>
-              <span className={styles.white}>Logic</span>
-              <span className={styles.grey}>.</span>
-              <span className={styles.greyer}>com</span>
-            </Link>
-          </span>
-          <div className={styles.menu}>
-            <div
-              className={
-                router.pathname == '/subscribe' ? 'active' : 'subscribe'
-              }
-            >
-              <Link href="/subscribe" aria-label="Subscribe" title="Subscribe">
-                <FontAwesomeIcon icon={faStar} className={styles.icon} />
-                <span className={styles.title}>Subscribe</span>
-              </Link>
+      <header className="bg-black/20 flex justify-between items-center p-5 text-[2.5rem] uppercase italic font-black text-shadow shadow-black border-b border-zinc-800">
+        <div className="grid grid-cols-5 gap-2">
+          <div className="grid-rows-1">
+            <Online />
+          </div>
+          <div className="grid-rows-3 col-span-4">
+            <div className="leading-none tracking-wider flex justify-center -mt-0.5 mb-0.5">
+                <Link href="/" aria-label="Chud Logic" title="Chud Logic">
+                  <span className="text-vomit-500 mr-1">Chud</span>
+                  <span className="text-white">Logic</span>
+                  <span className="text-zinc-400">.</span>
+                  <span className="text-zinc-600">com</span>
+                </Link>
             </div>
-            <div className={router.pathname == '/donate' ? 'active' : 'donate'}>
-              <Link href="/donate" aria-label="Donate" title="Donate">
-                <FontAwesomeIcon icon={faCoins} className={styles.icon} />
-                <span className={styles.title}>Donate</span>
-              </Link>
-            </div>
-            <div
-              className={
-                router.pathname == '/community' ? 'active' : 'community'
-              }
-            >
-              <Link href="/community" aria-label="Community" title="Community">
-                <FontAwesomeIcon icon={faUserGroup} className={styles.icon} />
-                <span className={styles.title}>Community</span>
-              </Link>
-            </div>
-            <div className={router.pathname == '/videos' ? 'active' : 'videos'}>
-              <Link href="/videos" aria-label="Videos" title="Videos">
-                <FontAwesomeIcon icon={faYoutube} className={styles.icon} />
-                <span className={styles.title}>videos</span>
-              </Link>
-            </div>
-            <div className={router.pathname == '/stream' ? 'active' : 'stream'}>
-              <Link href="/stream" aria-label="Stream" title="Stream">
-                <FontAwesomeIcon icon={faVideo} className={styles.icon} />
-                <span className={styles.title}>Stream</span>
-              </Link>
-            </div>{' '}
-            <div
-              className={router.pathname == '/schedule' ? 'active' : 'schedule'}
-            >
-              <Link href="/schedule" aria-label="Schedule" title="Schedule">
-                <FontAwesomeIcon
-                  icon={faCalendarDays}
-                  className={styles.icon}
-                />
-                <span className={styles.title}>Schedule</span>
-              </Link>
+            <div className="text-[1.1rem] leading-none tracking-wider space-y-1">
+              <div className="flex justify-center space-x-2">
+                <span
+                  className={
+                    router.pathname == '/subscribe'
+                      ? 'underline underline-offset-4 decoration-vomit-500'
+                      : 'subscribe'
+                  }
+                >
+                  <Link
+                    href="/subscribe"
+                    aria-label="Subscribe"
+                    title="Subscribe"
+                  >
+                    <FontAwesomeIcon icon={faStar} className="text-vomit-500" />
+                    <span className="hover:underline hover:underline-offset-4 decoration-vomit-500">
+                      Subscribe
+                    </span>
+                  </Link>
+                </span>
+                <span
+                  className={
+                    router.pathname == '/donate'
+                      ? 'underline underline-offset-4 decoration-vomit-500'
+                      : 'donate'
+                  }
+                >
+                  <Link href="/donate" aria-label="Donate" title="Donate">
+                    <FontAwesomeIcon
+                      icon={faCoins}
+                      className="text-vomit-500"
+                    />
+                    <span className="hover:underline hover:underline-offset-4 decoration-vomit-500">
+                      Donate
+                    </span>
+                  </Link>
+                </span>
+                <span
+                  className={
+                    router.pathname == '/community'
+                      ? 'underline underline-offset-4 decoration-vomit-500'
+                      : 'community'
+                  }
+                >
+                  <Link
+                    href="/community"
+                    aria-label="Community"
+                    title="Community"
+                  >
+                    <FontAwesomeIcon
+                      icon={faUserGroup}
+                      className="text-vomit-500"
+                    />
+                    <span className="hover:underline hover:underline-offset-4 decoration-vomit-500">
+                      Community
+                    </span>
+                  </Link>
+                </span>
+              </div>
+              <div className="flex justify-center space-x-2">
+                <span
+                  className={
+                    router.pathname == '/videos'
+                      ? 'underline underline-offset-4 decoration-vomit-500'
+                      : 'videos'
+                  }
+                >
+                  <Link href="/videos" aria-label="Videos" title="Videos">
+                    <FontAwesomeIcon
+                      icon={faYoutube}
+                      className="text-vomit-500"
+                    />
+                    <span className="hover:underline hover:underline-offset-4 decoration-vomit-500">
+                      videos
+                    </span>
+                  </Link>
+                </span>
+                <span
+                  className={
+                    router.pathname == '/stream'
+                      ? 'underline underline-offset-4 decoration-vomit-500'
+                      : 'stream'
+                  }
+                >
+                  <Link href="/stream" aria-label="Stream" title="Stream">
+                    <FontAwesomeIcon
+                      icon={faVideo}
+                      className="text-vomit-500"
+                    />
+                    <span className="hover:underline hover:underline-offset-4 decoration-vomit-500">
+                      Stream
+                    </span>
+                  </Link>
+                </span>
+                <span
+                  className={
+                    router.pathname == '/schedule'
+                      ? 'underline underline-offset-4 decoration-vomit-500'
+                      : 'schedule'
+                  }
+                >
+                  <Link href="/schedule" aria-label="Schedule" title="Schedule">
+                    <FontAwesomeIcon
+                      icon={faCalendarDays}
+                      className="text-vomit-500"
+                    />
+                    <span className="hover:underline hover:underline-offset-4 decoration-vomit-500">
+                      Schedule
+                    </span>
+                  </Link>
+                </span>
+              </div>
             </div>
           </div>
-        </span>
-        <span className={styles.panel}>
+        </div>
+        <span className="flex flex-col flex-wrap content-between justify-between h-full">
           <Register />
         </span>
       </header>

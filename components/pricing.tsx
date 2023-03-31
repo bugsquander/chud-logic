@@ -9,8 +9,6 @@ import { useUser } from '@/utils/useUser';
 
 import { Price, ProductWithPrice } from 'types';
 
-import styles from '@/styles/subscribe.module.css';
-
 interface Props {
   products: ProductWithPrice[];
 }
@@ -71,16 +69,7 @@ export default function Pricing({ products }: Props) {
 
   return (
     <section className="">
-      <div className="">
         <div className="sm:flex sm:flex-col sm:align-center">
-          <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
-            SUBSCRIBE TO CHUD LOGIC!
-          </h1>
-          <p className="mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
-            Hi! I am a notoriously shameless human being and only tolerate you cretins
-            because I want your money. Not sure how to provide it? Here are your
-            current options:{' '}
-          </p>
           <div className="relative self-center mt-6 bg-zinc-900 rounded-lg p-0.5 flex sm:mt-8 border border-zinc-800">
             <button
               onClick={() => setBillingInterval('month')}
@@ -161,7 +150,6 @@ export default function Pricing({ products }: Props) {
             );
           })}
         </div>
-      </div>
     </section>
   );
 }

@@ -2,7 +2,6 @@ import { useSupabaseClient } from '@supabase/auth-helpers-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
-import styles from '@/pages/emotes/emotes.module.css';
 
 const Emote = ({ emote, onDelete }) => {
   const supabase = useSupabaseClient();
@@ -31,7 +30,7 @@ const Emote = ({ emote, onDelete }) => {
       <h3>{emote.title}</h3>
       <p>{emote.shortcut}</p>
 
-      <span className={styles.edit}>
+      <span>
         <Link
           href={'/emotes/' + emote.id}
           aria-label="Edit Emote"
@@ -41,7 +40,7 @@ const Emote = ({ emote, onDelete }) => {
         </Link>
       </span>
 
-      <span className={styles.delete}>
+      <span>
         <FontAwesomeIcon
           icon={faTrash}
           aria-label="Delete Emote"
