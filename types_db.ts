@@ -48,29 +48,6 @@ export interface Database {
           stripe_customer_id?: string | null;
         };
       };
-      donations: {
-        Row: {
-          created: string;
-          id: string;
-          metadata: Json | null;
-          price_id: string | null;
-          user_id: string;
-        };
-        Insert: {
-          created: string;
-          id: string;
-          metadata: Json | null;
-          price_id: string | null;
-          user_id: string;
-        };
-        Update: {
-          created: string;
-          id: string;
-          metadata: Json | null;
-          price_id: string | null;
-          user_id: string;
-        };
-      };
       prices: {
         Row: {
           active: boolean | null;

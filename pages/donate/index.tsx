@@ -1,10 +1,24 @@
-import { NextPage } from 'next'
+import { GetStaticPropsResult } from 'next';
 
-const DonatePage: NextPage = () => {
-  return (
-      <div className="page-container">
-      </div>
-  )
+import Donate from '@/components/donate';
+import { getActiveProductsWithPrices } from '@/utils/supabase-client';
+import { Product } from 'types';
+
+interface Props {
+  products: Product[];
 }
 
-export default DonatePage
+export default function PricingPage({ products }: Props) {
+  return <Donate products={products} />;
+}
+
+export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
+  const products = await getActiveProductsWithPrices();
+
+  return {
+    props: {
+      products
+    },
+    revalidate: 60
+  };
+}

@@ -6,7 +6,7 @@ import { stripe } from '@/utils/stripe';
 import {
   upsertProductRecord,
   upsertPriceRecord,
-  manageSubscriptionStatusChange
+  manageSubscriptionStatusChange,
 } from '@/utils/supabase-admin';
 
 // Stripe requires the raw body to construct the event.
@@ -32,7 +32,7 @@ const relevantEvents = new Set([
   'checkout.session.completed',
   'customer.subscription.created',
   'customer.subscription.updated',
-  'customer.subscription.deleted'
+  'customer.subscription.deleted',
 ]);
 
 const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {

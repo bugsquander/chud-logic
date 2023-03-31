@@ -23,6 +23,8 @@ const barlow = Barlow({
   subsets: ['latin'],
 });
 
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
 export default function MyApp({
   Component,
   pageProps

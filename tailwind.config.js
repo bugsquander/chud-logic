@@ -6,7 +6,8 @@ module.exports = {
   content: [
     'app/**/*.{ts,tsx}',
     'components/**/*.{ts,tsx}',
-    'pages/**/*.{ts,tsx}'
+    'pages/**/*.{ts,tsx}',
+    "./node_modules/tw-elements/dist/js/**/*.js"
   ],
   theme: {
     extend: {
@@ -20,5 +21,5 @@ module.exports = {
       }
     }
   },
-  plugins: []
+  plugins: [require("tw-elements/dist/plugin")]
 };
