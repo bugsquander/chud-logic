@@ -1,7 +1,6 @@
 import styles from "./dashboard.module.css";
 import Announcements from "../announcements";
 import Emotes from "../emotes";
-import Users from "@/pages/users";
 import Link from "next/link";
 
 const Dashboard = () => {
@@ -16,7 +15,6 @@ const Dashboard = () => {
           >
             <div className={styles.link}>Users</div>
           </Link>
-          <Users />
         </div>
         <div className={styles.announcements}>
           <Link
