@@ -13,13 +13,13 @@ const User = () => {
   return (
     <div className="flex flex-col flex-wrap content-between justify-between h-full">
       {!session ? (
-        <div>
+        <>
           <div className="flex justify-center">
             <Link
               href="/signin"
               aria-label="User"
               title="User"
-              className="flex items-center justify-center rounded-full border-2 border-vomit-500 w-12 h-12"
+              className="flex items-center justify-center rounded-full border-2 border-vomit-500 w-14 h-14"
             >
               <FontAwesomeIcon
                 icon={faUser}
@@ -37,7 +37,7 @@ const User = () => {
               <span>Sign up</span>
             </Link>
           </div>
-        </div>
+          </>
       ) : (
         <SignedIn session={session} />
       )}

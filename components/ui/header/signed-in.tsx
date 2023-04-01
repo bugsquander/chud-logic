@@ -37,14 +37,12 @@ export default function SignedIn({ session }) {
 
   return (
     <>
-      <div className="flex flex-col flex-wrap content-between justify-between h-full">
-
         <div className="flex justify-center">
           <Link href="/account" aria-label={username} title={username}>
             <img
               src={avatar_url}
-              height="48px"
-              width="48px"
+              height="56px"
+              width="56px"
               className="flex items-center justify-center rounded-full border-2 border-vomit-500"
             ></img>
           </Link>
@@ -64,7 +62,6 @@ export default function SignedIn({ session }) {
             <span>Sign Out</span>
           </Link>
         </div>
-      </div>
     </>
   );
 }

@@ -159,9 +159,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <span className="flex flex-col flex-wrap content-between justify-between h-full">
           <Register />
-        </span>
       </header>
     </>
   );
