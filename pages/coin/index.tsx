@@ -1,6 +1,6 @@
 import { GetStaticPropsResult } from 'next';
 
-import Donation from '@/components/donation';
+import Coins from '@/components/coins';
 import { getActiveProductsWithPrices } from '@/utils/supabase-client';
 import { Product } from 'types';
 
@@ -8,8 +8,8 @@ interface Props {
   products: Product[];
 }
 
-export default function Donate({ products }: Props) {
-  return <Donation products={products} />;
+export default function Coin({ products }: Props) {
+  return <Coins products={products} />;
 }
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {

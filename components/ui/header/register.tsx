@@ -19,11 +19,11 @@ const User = () => {
               href="/signin"
               aria-label="User"
               title="User"
-              className="flex items-center justify-center rounded-full border-2 border-vomit-500 w-14 h-14"
+              className="flex items-center justify-center rounded-full border-2 border-vomit-500 h-6 w-6 sm:w-14 sm:h-14"
             >
               <FontAwesomeIcon
                 icon={faUser}
-                className="text-lg text-vomit-500"
+                className="text-[8px] sm:text-lg text-vomit-500"
               />
             </Link>
           </div>
@@ -34,7 +34,7 @@ const User = () => {
                 icon={faRightToBracket}
                 className="mr-1 text-vomit-500"
               />
-              <span>Sign up</span>
+              <span className="hidden sm:inline">Sign up</span>
             </Link>
           </div>
           </>

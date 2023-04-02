@@ -5,6 +5,8 @@ import {
   createServerSupabaseClient,
   User
 } from '@supabase/auth-helpers-nextjs';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar, faUser } from '@fortawesome/free-solid-svg-icons';
 
 import AccountDetails from '@/components/account';
 
@@ -84,57 +86,73 @@ export default function Account({ user }: { user: User }) {
 
   return (
     <section className="">
-      <div className="">
-        <Card title="User Profile">
-          <div className="text-xl mt-8 mb-4 font-semibold">
-            {userDetails ? (
+      <div className="border border-zinc-800 bg-black/20 w-fit p-5 rounded-md">
+        <h3 className="text-2xl uppercase italic font-black mb-5">
+          <FontAwesomeIcon icon={faUser} className="text-vomit-500 mr-1" />
+          Account
+        </h3>
+        {userDetails ? (
+          <div className="flex justify-between gap-5">
+            <div className="w-fit">
+              <img id="uploadedimage" src={userDetails.avatar_url} className="border-2 border-zinc-600 rounded-full" />
+            </div>
+            <div className="flex flex-col justify-between">
               <div>
-                <div>
-                  <img id="uploadedimage" src={userDetails.avatar_url} />
-                </div>
+                <div className="text-sm text-zinc-500">Username</div>
                 <div>{userDetails.full_name}</div>
+              </div>
+              <div>
+                <div className="text-sm text-zinc-500">Email</div>
                 <div>{user ? user.email : undefined}</div>
               </div>
-            ) : (
-              <div className="h-8 mb-6">
-                <LoadingDots />
-              </div>
-            )}
+            </div>
           </div>
-        </Card>
-        <Card
-          title="Subscription"
-          description={
-            subscription
-              ? `You currently have a ${subscription?.prices?.products?.name} subscription.`
-              : ''
-          }
-          footer={
-            <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-              <p className="pb-4 sm:pb-0">Manage your subscription.</p>
+        ) : (
+          <div className="">
+            <LoadingDots />
+          </div>
+        )}
+      </div>
+
+      <div className="border border-zinc-800 bg-black/20 w-fit p-5 rounded-md">
+        <h3 className="text-2xl uppercase italic font-black mb-5">
+          <FontAwesomeIcon icon={faUser} className="text-vomit-500 mr-1" />
+          Subscription
+        </h3>
+        {userDetails ? (
+          <div className="grid grid-cols-1 grid-rows-3">
+            <div>
+              {subscription
+                ? `You currently have a ${subscription?.prices?.products?.name} subscription.`
+                : ''}
+            </div>
+            <div>
+              {isLoading ? (
+                <div>
+                  <LoadingDots />
+                </div>
+              ) : subscription ? (
+                `${subscriptionPrice}/${subscription?.prices?.interval}`
+              ) : (
+                <Link href="/">Choose your subscription</Link>
+              )}
+            </div>
+            <div>
               <Button
                 variant="slim"
                 loading={loading}
                 disabled={loading || !subscription}
                 onClick={redirectToCustomerPortal}
               >
-                Open Stripe customer portal
+                Manage Subscription
               </Button>
             </div>
-          }
-        >
-          <div className="text-xl mt-8 mb-4 font-semibold">
-            {isLoading ? (
-              <div className="h-12 mb-6">
-                <LoadingDots />
-              </div>
-            ) : subscription ? (
-              `${subscriptionPrice}/${subscription?.prices?.interval}`
-            ) : (
-              <Link href="/">Choose your subscription</Link>
-            )}
           </div>
-        </Card>
+        ) : (
+          <div className="">
+            <LoadingDots />
+          </div>
+        )}
       </div>
     </section>
   );

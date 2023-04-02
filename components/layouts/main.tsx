@@ -2,16 +2,16 @@ import { PropsWithChildren } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import Header from '../components/ui/header';
-import Footer from '../components/ui/footer';
+import Header from '@/components/ui/header';
+import Footer from '@/components/ui/footer';
 
-import { PageMeta } from '../types';
+import { PageMeta } from '@/types';
 
 interface Props extends PropsWithChildren {
   meta?: PageMeta;
 }
 
-export default function Layout({ children, meta: pageMeta }: Props) {
+export default function MainLayout({ children, meta: pageMeta }: Props) {
   const router = useRouter();
   const meta = {
     title: 'Chud Logic',
@@ -41,7 +41,7 @@ export default function Layout({ children, meta: pageMeta }: Props) {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.cardImage} />
       </Head>
-      <div className="container bg-[url('/cartographer.png')] bg-repeat bg-fixed flex flex-col h-screen w-screen">
+      <div className="bg-[url('/cartographer.png')] bg-repeat bg-fixed flex flex-col h-screen w-screen">
       <Header />
       <main id="skip" className="flex-2 overflow-auto bg-gradient-to-t from-[rgba(13,12,12,0.2)] via-[rgba(60,60,60,0.2)] to-[rgba(13,12,12,0.2)] p-5">{children}</main>
       <Footer />

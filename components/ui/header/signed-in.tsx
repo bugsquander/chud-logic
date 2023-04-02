@@ -37,31 +37,29 @@ export default function SignedIn({ session }) {
 
   return (
     <>
-        <div className="flex justify-center">
-          <Link href="/account" aria-label={username} title={username}>
-            <img
-              src={avatar_url}
-              height="56px"
-              width="56px"
-              className="flex items-center justify-center rounded-full border-2 border-vomit-500"
-            ></img>
-          </Link>
-        </div>
+      <div className="flex justify-center">
+        <Link href="/account" aria-label={username} title={username}>
+          <img
+            src={avatar_url}
+            className="flex items-center justify-center rounded-full border-2 border-vomit-500 h-6 w-6 sm:w-14 sm:h-14"
+          ></img>
+        </Link>
+      </div>
 
-        <div className="text-base">
-          <Link
-            href="#"
-            onClick={() => supabase.auth.signOut()}
-            aria-label="Sign Out"
-            title="Sign Out"
-          >
-            <FontAwesomeIcon
-              icon={faRightFromBracket}
-              className="mr-1 text-vomit-500"
-            />
-            <span>Sign Out</span>
-          </Link>
-        </div>
+      <div className="text-base">
+        <Link
+          href="#"
+          onClick={() => supabase.auth.signOut()}
+          aria-label="Sign Out"
+          title="Sign Out"
+        >
+          <FontAwesomeIcon
+            icon={faRightFromBracket}
+            className="mr-1 text-vomit-500"
+          />
+          <span className="hidden sm:inline">Sign Out</span>
+        </Link>
+      </div>
     </>
   );
 }

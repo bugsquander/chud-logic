@@ -1,32 +1,31 @@
-import Announcements from "../announcements";
-import Emotes from "../emotes";
 import Link from "next/link";
+import { useEffect } from "react";
+import Menu from '@/components/dashboard/menu';
 
-const Dashboard = () => {
+const DashboardPage = () => {
+  return <div>Dashboard</div>;
+};
+
+export const NestedLayout = ({ children }) => {
+  useEffect(() => {
+    console.log("TeamsPageLayout mounted");
+    return () => console.log("TeamsPageLayout unmounted");
+  }, []);
   return (
-    <>
-        <div className="mb-5">
-          <Link
-            href="/announcements"
-            aria-label="Chud Logic // Announcements"
-            title="Chud Logic // Announcements"
-          >
-            <div>Announcements</div>
-          </Link>
-          <Announcements />
-        </div>
-        <div>
-          <Link
-            href="/emotes"
-            aria-label="Chud Logic // Emotes"
-            title="Chud Logic // Emotes"
-          >
-            <div>Emotes</div>
-          </Link>
-          <Emotes />
-        </div>
-    </>
+    <div className="grid grid-cols-4 gap-5">
+        <section className="col-span-3 bg-black/20 rounded p-5">
+      {children}
+    </section>
+    <aside>
+    <Menu />
+
+    </aside>
+    </div>
   );
 };
 
-export default Dashboard;
+export const OptionsPageLayout = (page) => <NestedLayout>{page}</NestedLayout>;
+
+DashboardPage.getLayout = OptionsPageLayout;
+
+export default DashboardPage;

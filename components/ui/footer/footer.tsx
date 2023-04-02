@@ -9,7 +9,6 @@ import {
   faPatreon
 } from '@fortawesome/free-brands-svg-icons';
 import {
-  faEnvelope,
   faClipboardList,
   faSkull
 } from '@fortawesome/free-solid-svg-icons';
@@ -66,7 +65,7 @@ const Footer = () => {
           >
             <FontAwesomeIcon
               icon={faDiscord}
-              className="text-[#7289d9] hover:text-vomit-500 transition duration-1000"
+              className="text-[#5865f2] hover:text-vomit-500 transition duration-1000"
             />
           </Link>
         </span>
@@ -95,27 +94,16 @@ const Footer = () => {
           </Link>
         </span>
       </div>
-      <div className="text-xs flex items-center justify-end font-normal text-zinc-500 space-x-2 text-shadow shadow-black">
-        <span>
-          <Link
-            href="/contact"
-            aria-label="Contact"
-            title="Contact"
-            className="hover:text-zinc-400"
-          >
-            <FontAwesomeIcon icon={faEnvelope} className="mr-1"/>
-            <span>Contact</span>
-          </Link>
-        </span>
+      <div className="text-xs flex items-center justify-end font-normal text-zinc-400 space-x-2 text-shadow shadow-black tracking-wide">
         <span>
           <Link
             href="/terms"
             aria-label="Terms"
             title="Terms"
-            className="hover:text-zinc-400"
+            className="hover:text-zinc-300"
           >
             <FontAwesomeIcon icon={faClipboardList} className="mr-1"/>
-            <span>Terms & Privacy</span>
+            <span>Terms & Conditions</span>
           </Link>
         </span>
         <span>
@@ -123,10 +111,10 @@ const Footer = () => {
             href="/terms"
             aria-label="Bastards"
             title="Bastards"
-            className="hover:text-zinc-400"
+            className="hover:text-zinc-300"
           >
             <FontAwesomeIcon icon={faSkull} className="mr-1" />
-            <span>Site maintained by horrible people</span>
+            <span>Site maintained by horrible bastards</span>
           </Link>
         </span>
       </div>

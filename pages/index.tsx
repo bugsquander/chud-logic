@@ -1,6 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation } from "swiper";
-import styles from "@/styles/index.module.css";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -42,23 +41,24 @@ export default function Index({ data }) {
             const { maxres = {} } = thumbnails;
             return (
               <SwiperSlide key={id}>
-                <div key={id} className={styles.card}>
-                  <a
-                    href={`https://www.youtube.com/watch?v=${resourceId.videoId}`}
-                    title={title}
-                    aria-label={title}
-                  >
-                    <div className={styles.image}>
-                      <img
-                        width={maxres.width}
-                        height={maxres.height}
-                        src={maxres.url}
-                        alt=""
-                      />
-                    </div>
-                    <div className={styles.title}>{title}</div>
-                  </a>
+            <div key={id}>
+              <a
+                href={`https://www.youtube.com/watch?v=${resourceId.videoId}`}
+                title={title}
+                aria-label={title}
+              >
+                <div>
+                  <img
+                    src={maxres.url}
+                    alt=""
+                    className="w-full h-full object-contain block"
+                  />
                 </div>
+                <div className="text-black bg-white text-base font-black italic text-justify text-ellipsis line-clamp-2 border-8 border-white m-0">
+                  {title}
+                </div>
+              </a>
+            </div>
               </SwiperSlide>
             );
           })}

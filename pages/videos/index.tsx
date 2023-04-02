@@ -18,7 +18,7 @@ export default function Videos({ data }) {
   return (
     <>
       <div
-        className="grid gap-5 sm:grid-cols-[repeat(1,minmax(200px,1fr))] md:grid-cols-[repeat(4,minmax(200px,1fr))]"
+        className="grid gap-5 sm:grid-cols-[repeat(2,minmax(200px,1fr))] md:grid-cols-[repeat(3,minmax(200px,1fr))] lg:grid-cols-[repeat(4,minmax(200px,1fr))]"
       >
         {data.items.map((item) => {
           const { id, snippet = {} } = item;
@@ -38,7 +38,7 @@ export default function Videos({ data }) {
                     className="w-full h-full object-contain block"
                   />
                 </div>
-                <div className="text-black bg-white text-base font-black italic text-justify text-ellipsis line-clamp-2 border-8 border-white m-0">
+                <div className="text-black bg-white text-base font-black italic text-justify line-clamp-2 border-8 border-white m-0">
                   {title}
                 </div>
               </a>

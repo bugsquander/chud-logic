@@ -4,7 +4,8 @@ import { AppProps } from 'next/app';
 import { SessionContextProvider, Session } from '@supabase/auth-helpers-react';
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
 
-import Layout from '@/components/layout';
+import MainLayout from '@/components/layouts/main';
+
 import { MyUserContextProvider } from '@/utils/useUser';
 import type { Database } from 'types_db';
 
@@ -20,10 +21,8 @@ import { Barlow } from 'next/font/google';
 const barlow = Barlow({
   weight: ['200', '500', '700', '900'],
   style: ['normal', 'italic'],
-  subsets: ['latin'],
+  subsets: ['latin']
 });
-
-<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 
 export default function MyApp({
   Component,
@@ -40,13 +39,24 @@ export default function MyApp({
 
   return (
     <div className={barlow.className}>
-      <SessionContextProvider supabaseClient={supabaseClient} initialSession={pageProps.initialSession}>
+      <SessionContextProvider
+        supabaseClient={supabaseClient}
+        initialSession={pageProps.initialSession}
+      >
         <MyUserContextProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <MainLayout>
+            <Layout Component={Component} pageProps={pageProps} />
+          </MainLayout>
         </MyUserContextProvider>
       </SessionContextProvider>
     </div>
   );
 }
+
+const Layout = ({ Component, pageProps }) => {
+  if (Component.getLayout) {
+    return Component.getLayout(<Component {...pageProps} />);
+  } else {
+    return <Component {...pageProps} />;
+  }
+};

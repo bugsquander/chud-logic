@@ -1,0 +1,86 @@
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { getStripe } from '@/utils/stripe-client';
+import { useUser } from '@/utils/useUser';
+import { formatAmountForDisplay } from '@/utils/helpers';
+import axios from 'axios';
+import Input from './input';
+
+export default function DonationButton() {
+  const router = useRouter();
+  const { user } = useUser();
+
+  const [amount, setAmount] = useState<number | 0>(100);
+
+  const [input, setInput] = useState({
+    amount: Math.round(amount / 10)
+  });
+
+  const defaultAmounts = [100, 250, 500, 1000, 2500];
+
+  const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (e) =>
+    setInput({
+      ...input,
+      [e.currentTarget.name]: e.currentTarget.value
+    });
+
+  const createCheckOutSession = async () => {
+    if (!user) {
+      return router.push('/signin');
+    }
+    try {
+      const checkoutSession = await axios.post('/api/create-donation-session', {
+        amount: input.amount
+      });
+      const stripe = await getStripe();
+      stripe?.redirectToCheckout({
+        sessionId: checkoutSession.data.id
+      });
+    } catch (error) {
+      return alert((error as Error)?.message);
+    }
+  };
+
+  return (
+    <div className="flex-col items-center z-10 space-y-5 rounded-md">
+      <div className="flex w-full items-center">
+        <Input
+          name={'amount'}
+          value={amount}
+          min={100}
+          max={null}
+          step={100}
+          currency={'gbp'}
+          onChange={handleInputChange}
+        />
+      </div>
+
+      <div className="flex items-center space-x-2">
+        {defaultAmounts.map((buttonAmount) => (
+          <button
+            className={`${
+              amount === buttonAmount
+                ? 'bg-zinc-700 border-zinc-600'
+                : 'bg-zinc-800' +
+                  ' border-2 border-zinc-500 hover:border-2 hover:border-zinc-400'
+            } border-2 border-zinc-300 rounded px-5 py-2 transition duration-200`}
+            onClick={() => {
+              setAmount(buttonAmount);
+            }}
+
+            key={buttonAmount}
+          >
+            {buttonAmount}
+          </button>
+        ))}
+      </div>
+
+      <button
+        onClick={createCheckOutSession}
+        className="font-bold text-base w-full py-2 px-4 rounded bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600"
+      >
+        Pay {formatAmountForDisplay(amount / 10, 'gbp')}
+      </button>
+    </div>
+  );
+}

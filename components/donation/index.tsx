@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ProductWithPrice } from 'types';
-import Button from '@/components/donate/button';
+import Button from '@/components/donation/button';
 
 interface Props {
   products: ProductWithPrice[];
@@ -8,7 +8,7 @@ interface Props {
 
 type ProductName = 'Donation' | 'ChudCoin';
 
-export default function Pricing({ products }: Props) {
+export default function Donation({ products }: Props) {
   const [productName, setProductName] = useState<ProductName>('Donation');
 
   if (!products.length)
