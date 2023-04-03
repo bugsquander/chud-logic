@@ -12,8 +12,8 @@ export const NestedLayout = ({ children }) => {
     return () => console.log("TeamsPageLayout unmounted");
   }, []);
   return (
-    <div className="grid grid-cols-4 gap-5">
-        <section className="col-span-3 bg-black/20 rounded p-5">
+    <div className="lg:grid lg:grid-cols-4 gap-5">
+        <section className="lg:col-span-3 bg-black/20 rounded p-5">
       {children}
     </section>
     <aside>

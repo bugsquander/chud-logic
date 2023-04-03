@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFaceSmile } from '@fortawesome/free-solid-svg-icons';
 import AllUsers from '@/components/dashboard/users/all';
 
-const UsersAllPage = () => {
+const UsersAllPage = ({  }) => {
   return (
     <>
       <div className="text-2xl uppercase italic font-black mb-5">

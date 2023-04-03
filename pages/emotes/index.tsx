@@ -81,9 +81,9 @@ const Emotes = () => {
       </div>
         {fetchError && <p>{fetchError}</p>}
         {emotes && (
-          <div className="w-full flex flex-wrap justify-start items-center content-center">
+          <div className="w-full grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-5 justify-between">
             {emotes.map((emote) => (
-              <div className="basis-1/12" key={emote.id}>
+              <div className="" key={emote.id}>
                 <Emote key={emote.id} emote={emote} onDelete={handleDelete} />
               </div>
             ))}
