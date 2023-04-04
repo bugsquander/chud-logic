@@ -41,7 +41,7 @@ const Header = () => {
                   <span className="text-transparent bg-clip-text bg-gradient-to-b from-vomit-100 via-vomit-500 to-vomit-900">Chud</span>
                   <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500">Logic</span>
                   <span className="text-transparent bg-clip-text bg-gradient-to-b from-zinc-500 to-zinc-800">.</span>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-b from-zinc-500 via-zinc-600 to-zinc-900">com</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-b from-zinc-500 via-zinc-700 to-zinc-900">com</span>
                 </Link>
             </div>
             <div className="text-[1.1rem] leading-none tracking-wider space-y-1 shadow-black">

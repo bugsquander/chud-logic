@@ -19,7 +19,7 @@ const Contact = () => {
               <input
                 type="email"
                 id="email"
-                className="block p-2.5 w-full text-base text-white bg-zinc-700/20 rounded-lg border border-zinc-700 hover:border-zinc-600 focus:border-zinc-500"
+                className="block p-2.5 w-full text-base text-white bg-zinc-700/20 rounded-lg border border-zinc-700 hover:border-zinc-600 focus:border-zinc-500 outline-none"
                 placeholder="username@email.com"
                 required
               />
@@ -28,7 +28,7 @@ const Contact = () => {
               <input
                 type="text"
                 id="subject"
-                className="block p-2.5 w-full text-base text-white bg-zinc-700/20 rounded-lg border border-zinc-700 hover:border-zinc-600 focus:border-zinc-500"
+                className="block p-2.5 w-full text-base text-white bg-zinc-700/20 rounded-lg border border-zinc-700 hover:border-zinc-600 focus:border-zinc-500 outline-none"
                 placeholder="Subject"
                 required
               />
@@ -36,7 +36,7 @@ const Contact = () => {
             <div className="sm:col-span-2">
               <textarea
                 id="message"
-                className="block p-2.5 w-full text-base text-white bg-zinc-700/20 rounded-lg border border-zinc-700 hover:border-zinc-600 focus:border-zinc-500"
+                className="block p-2.5 w-full text-base text-white bg-zinc-700/20 rounded-lg border border-zinc-700 hover:border-zinc-600 focus:border-zinc-500 outline-none"
                 placeholder="What do you need to whine about you fucking baby?"
               ></textarea>
             </div>

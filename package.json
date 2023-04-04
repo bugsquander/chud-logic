@@ -36,8 +36,7 @@
     "react-twitch-embed": "^3.0.1",
     "stripe": "^11.13.0",
     "swiper": "^9.1.1",
-    "swr": "^2.0.4",
-    "tw-elements": "^1.0.0-beta1"
+    "swr": "^2.0.4"
   },
   "devDependencies": {
     "@types/node": "^18.14.4",

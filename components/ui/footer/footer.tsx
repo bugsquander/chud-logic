@@ -8,18 +8,17 @@ import {
   faRedditAlien,
   faPatreon
 } from '@fortawesome/free-brands-svg-icons';
-import {
-  faClipboardList,
-  faSkull
-} from '@fortawesome/free-solid-svg-icons';
+import { faClipboardList, faSkull } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
   return (
     <footer className="p-5 border-t border-zinc-800 bg-black/20 uppercase italic font-black">
-      <div className="flex items-center justify-end text-3xl pb-1.5 space-x-2 text-shadow shadow-black">
-        <span>
-          <span className="text-vomit-500 mr-1.5">Chud</span>
-          <span className="text-white">Nation</span>
+      <div className="flex items-center justify-end text-3xl pb-1.5 space-x-2 shadow-black">
+        <span className="text-transparent bg-clip-text bg-gradient-to-b from-vomit-100 via-vomit-500 to-vomit-900">
+          Chud
+        </span>
+        <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500">
+          Nation
         </span>
         <span>
           <Link
@@ -102,7 +101,7 @@ const Footer = () => {
             title="Terms"
             className="hover:text-zinc-300"
           >
-            <FontAwesomeIcon icon={faClipboardList} className="mr-1"/>
+            <FontAwesomeIcon icon={faClipboardList} className="mr-1" />
             <span>Terms & Conditions</span>
           </Link>
         </span>

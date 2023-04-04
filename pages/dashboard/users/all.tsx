@@ -6,7 +6,6 @@ import AllUsers from '@/components/dashboard/users/all';
 export async function getStaticProps() {
   const res = await fetch('https://dummyjson.com/users');
   const data = await res.json();
-  console.log(data);
   return {
     props: {
       data
