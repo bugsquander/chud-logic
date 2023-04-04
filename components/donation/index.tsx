@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ProductWithPrice } from 'types';
-import Button from '@/components/donation/button';
+import DonateButton from '@/components/donation/button';
+import CoinButton from '@/components/coins/button';
 
 interface Props {
   products: ProductWithPrice[];
@@ -35,7 +36,7 @@ export default function Donation({ products }: Props) {
   return (
     <section className="">
       <div className="sm:flex sm:flex-col sm:align-center">
-        <div className="relative self-center mt-6 bg-zinc-900 rounded-lg p-0.5 flex sm:mt-8 border border-zinc-800">
+        <div className="relative self-center bg-zinc-900 rounded-lg p-0.5 flex border border-zinc-800">
           <button
             onClick={() => setProductName('Donation')}
             type="button"
@@ -60,27 +61,40 @@ export default function Donation({ products }: Props) {
           </button>
         </div>
       </div>
-      <div className="mt-8 space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-3">
+      <div className="mt-5 flex justify-center">
         {products.map((product) => {
           const name = product?.prices?.find(
             (name) => product.name === productName
           );
           if (!name) return null;
-          return (
-            <div
-              key={product.id}
-              className="rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900"
-            >
-              <div className="p-6">
-                <h2 className="text-2xl leading-6 font-semibold text-white">
-                  {product.name}
-                </h2>
-                <p className="mt-4 text-zinc-300">{product.description}</p>
-
-                <Button />
+          if (productName === 'Donation')
+            return (
+              <div
+                key={product.id}
+                className="rounded-lg bg-black/20 border border-zinc-800"
+              >
+                <div className="p-6">
+                  <h2 className="text-2xl leading-5 font-semibold text-white mb-5">
+                    {product.name}
+                  </h2>
+                  <DonateButton />
+                </div>
               </div>
-            </div>
-          );
+            );
+          if (productName === 'ChudCoin')
+            return (
+              <div
+                key={product.id}
+                className="rounded-lg bg-black/20 border border-zinc-800"
+              >
+                <div className="p-6">
+                  <h2 className="text-2xl leading-5 font-semibold text-white mb-5">
+                    {product.name}
+                  </h2>
+                  <CoinButton />
+                </div>
+              </div>
+            );
         })}
       </div>
     </section>

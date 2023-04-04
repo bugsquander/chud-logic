@@ -18,16 +18,16 @@ const CustomDonationInput = ({
   step,
   onChange
 }: Props) => (
-    <input
-      className="block p-3 w-full text-base text-white bg-transparent rounded-lg border border-gray-500 hover:border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-      type="number"
-      name={name}
-      value={value}
-      min={min}
-      max={max}
-      step={step}
-      onChange={onChange}
-    ></input>
+  <input
+    className="block p-2.5 w-full text-base text-white bg-zinc-700/20 rounded-lg border border-zinc-700 hover:border-zinc-600 focus:border-zinc-500 outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+    type="number"
+    name={name}
+    value={value}
+    min={min}
+    max={max}
+    step={step}
+    onChange={onChange}
+  ></input>
 );
 
 export default CustomDonationInput;

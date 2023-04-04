@@ -52,7 +52,7 @@ export default function DonationButton() {
       </div>
       <button
         onClick={createCheckOutSession}
-        className="font-bold text-base w-full py-2 px-4 rounded bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600"
+        className="font-bold text-base w-full py-2 px-4 rounded-lg bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600 hover:border-zinc-500"
       >
         Donate {formatAmountForDisplay(input.amount, 'gbp')}
       </button>

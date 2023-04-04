@@ -21,7 +21,9 @@ module.exports = {
       },
       colors: {
         vomit: {
-          500: '#adf500'
+          100: '#a3ff00',
+          500: '#adf500',
+          900: '#5b8100',
         }
       },
       flex: {

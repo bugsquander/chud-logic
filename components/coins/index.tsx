@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ProductWithPrice } from 'types';
-import Button from '@/components/coins/button';
+import CoinButton from '@/components/coins/button';
+import DonateButton from '@/components/coins/button';
 
 interface Props {
   products: ProductWithPrice[];
@@ -60,24 +61,37 @@ export default function Pricing({ products }: Props) {
           </button>
         </div>
       </div>
-      <div className="mt-5">
+      <div className="mt-5 flex justify-center">
         {products.map((product) => {
           const name = product?.prices?.find(
             (name) => product.name === productName
           );
           if (!name) return null;
-          return (
+          if (productName === 'Donation') return (
             <div
               key={product.id}
               className="rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900"
             >
-              <div className="p-6">
-                <h2 className="text-2xl leading-6 font-semibold text-white">
+              <div className="p-5">
+                <h2 className="text-2xl leading-5 font-semibold text-white mb-5">
                   {product.name}
                 </h2>
-                <p className="mt-4 text-zinc-300">{product.description}</p>
 
-                <Button />
+                <DonateButton />
+              </div>
+            </div>
+          );
+          if (productName === 'ChudCoin') return (
+            <div
+              key={product.id}
+              className="rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900"
+            >
+              <div className="p-5">
+                <h2 className="text-2xl leading-5 font-semibold text-white mb-5">
+                  {product.name}
+                </h2>
+
+                <CoinButton />
               </div>
             </div>
           );

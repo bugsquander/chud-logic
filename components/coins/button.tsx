@@ -62,8 +62,8 @@ export default function DonationButton() {
               amount === buttonAmount
                 ? 'bg-zinc-700 border-zinc-600'
                 : 'bg-zinc-800' +
-                  ' border-2 border-zinc-500 hover:border-2 hover:border-zinc-400'
-            } border-2 border-zinc-300 rounded px-5 py-2 transition duration-200`}
+                  ' border border-zinc-600 hover:bg-zinc-600 hover:border-zinc-500'
+            } border border-zinc-700 rounded-lg px-5 py-2 transition duration-200`}
             onClick={() => {
               setAmount(buttonAmount);
             }}
@@ -77,7 +77,7 @@ export default function DonationButton() {
 
       <button
         onClick={createCheckOutSession}
-        className="font-bold text-base w-full py-2 px-4 rounded bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600"
+        className="font-bold text-base w-full py-2 px-4 rounded-lg bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600 hover:border-zinc-500"
       >
         Pay {formatAmountForDisplay(amount / 10, 'gbp')}
       </button>

@@ -117,15 +117,15 @@ const Emote = () => {
           <div>
             <img id="uploadedimage" src={url} className="w-[100px] h-[100px]"></img>
           </div>
-          <span>
+          <div>
             <button
               type="button"
               onClick={openWidget}
-              className="font-bold text-base py-2 px-4 rounded bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600"
+              className="font-bold text-base w-fit py-2 px-4 rounded-lg bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600 hover:border-zinc-500"
             >
               Add Image
             </button>
-          </span>
+          </div>
           <input
             type="hidden"
             id="url"
@@ -139,7 +139,7 @@ const Emote = () => {
               placeholder="Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="block p-3 text-base text-white bg-transparent rounded-lg border border-gray-500 hover:border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+              className="block p-2.5 w-fit text-base text-white bg-zinc-700/20 rounded-lg border border-zinc-700 hover:border-zinc-600 focus:border-zinc-500 outline-none"
             />
           </div>
           <div>
@@ -149,18 +149,18 @@ const Emote = () => {
               placeholder="Shortcut"
               value={shortcut}
               onChange={(e) => setShortcut(e.target.value)}
-              className="block p-3 text-base text-white bg-transparent rounded-lg border border-gray-500 hover:border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+              className="block p-2.5 w-fit text-base text-white bg-zinc-700/20 rounded-lg border border-zinc-700 hover:border-zinc-600 focus:border-zinc-500 outline-none"
             />
           </div>
-          <span>
+          <div>
             <button
               type="button"
               onClick={handleSubmit}
-              className="font-bold text-base py-2 px-4 rounded bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600"
+              className="font-bold text-base w-fit py-2 px-4 rounded-lg bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600 hover:border-zinc-500"
             >
               Create Emote
             </button>
-          </span>
+          </div>
           {formError && <p className="error">{formError}</p>}
         </form>
       </div>

@@ -85,15 +85,15 @@ export default function Account({ user }: { user: User }) {
     }).format((subscription?.prices?.unit_amount || 0) / 100);
 
   return (
-    <section className="">
-      <div className="border border-zinc-800 bg-black/20 w-fit p-5 rounded-md">
+    <section className="sm:flex sm:justify-items-start sm:space-x-5">
+      <div className=" bg-black/20 w-fit p-5 border rounded-lg border-zinc-800 mb-5 sm:m-0">
         <h3 className="text-2xl uppercase italic font-black mb-5">
           <FontAwesomeIcon icon={faUser} className="text-vomit-500 mr-1" />
           Account
         </h3>
         {userDetails ? (
           <div className="flex justify-between gap-5">
-            <div className="w-fit">
+            <div>
               <img id="uploadedimage" src={userDetails.avatar_url} className="border-2 border-zinc-600 rounded-full" />
             </div>
             <div className="flex flex-col justify-between">
@@ -114,9 +114,9 @@ export default function Account({ user }: { user: User }) {
         )}
       </div>
 
-      <div className="border border-zinc-800 bg-black/20 w-fit p-5 rounded-md">
+      <div className="border border-zinc-800 bg-black/20 w-fit p-5 rounded-lg">
         <h3 className="text-2xl uppercase italic font-black mb-5">
-          <FontAwesomeIcon icon={faUser} className="text-vomit-500 mr-1" />
+          <FontAwesomeIcon icon={faStar} className="text-vomit-500 mr-1" />
           Subscription
         </h3>
         {userDetails ? (

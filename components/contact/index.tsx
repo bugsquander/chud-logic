@@ -19,7 +19,7 @@ const Contact = () => {
               <input
                 type="email"
                 id="email"
-                className="shadow-sm bg-transparent border border-gray-500 hover:border-gray-300 text-white text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                className="block p-2.5 w-full text-base text-white bg-zinc-700/20 rounded-lg border border-zinc-700 hover:border-zinc-600 focus:border-zinc-500"
                 placeholder="username@email.com"
                 required
               />
@@ -28,7 +28,7 @@ const Contact = () => {
               <input
                 type="text"
                 id="subject"
-                className="block p-3 w-full text-base text-white bg-transparent rounded-lg border border-gray-500 hover:border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                className="block p-2.5 w-full text-base text-white bg-zinc-700/20 rounded-lg border border-zinc-700 hover:border-zinc-600 focus:border-zinc-500"
                 placeholder="Subject"
                 required
               />
@@ -36,14 +36,14 @@ const Contact = () => {
             <div className="sm:col-span-2">
               <textarea
                 id="message"
-                className="block p-2.5 w-full text-base text-white bg-transparent rounded-lg shadow-sm border border-gray-500 hover:border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className="block p-2.5 w-full text-base text-white bg-zinc-700/20 rounded-lg border border-zinc-700 hover:border-zinc-600 focus:border-zinc-500"
                 placeholder="What do you need to whine about you fucking baby?"
               ></textarea>
             </div>
             <button
               type="submit"
-              className="font-bold text-base py-2 px-4 rounded bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600"
-            >
+              className="font-bold text-base w-fit py-2 px-4 rounded-lg bg-zinc-700 hover:bg-zinc-600 text-white border border-zinc-600 hover:border-zinc-500"
+              >
               Send message
             </button>
           </form>

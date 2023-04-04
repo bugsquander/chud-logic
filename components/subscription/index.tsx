@@ -110,7 +110,7 @@ export default function Subscription({ products }: Props) {
               <div
                 key={product.id}
                 className={cn(
-                  'rounded-lg shadow-sm divide-y divide-zinc-600 bg-black/20 border border-zinc-500',
+                  'rounded-lg shadow-sm divide-y divide-zinc-600 bg-black/20 border border-zinc-800',
                   {
                     'ring-2 ring-vomit-500': subscription
                       ? product.name === subscription?.prices?.products?.name
