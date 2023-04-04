@@ -13,7 +13,7 @@ import { faClipboardList, faSkull } from '@fortawesome/free-solid-svg-icons';
 const Footer = () => {
   return (
     <footer className="p-5 border-t border-zinc-800 bg-black/20 uppercase italic font-black">
-      <div className="flex items-center justify-end text-3xl pb-1.5 space-x-2 shadow-black">
+      <div className="flex items-center justify-end text-lg sm:text-3xl pb-1.5 space-x-2 shadow-black">
         <span className="text-transparent bg-clip-text bg-gradient-to-b from-vomit-100 via-vomit-500 to-vomit-900">
           Chud
         </span>
@@ -93,7 +93,7 @@ const Footer = () => {
           </Link>
         </span>
       </div>
-      <div className="text-xs flex items-center justify-end font-normal text-zinc-400 space-x-2 text-shadow shadow-black tracking-wide">
+      <div className="text-[8px] sm:text-xs flex items-center justify-end font-normal text-zinc-400 space-x-2 text-shadow shadow-black tracking-wide">
         <span>
           <Link
             href="/terms"

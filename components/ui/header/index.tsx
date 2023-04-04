@@ -30,7 +30,7 @@ const Header = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className="bg-black/20 flex justify-between items-center p-5 text-[2.5rem] uppercase italic font-black text-shadow border-b border-zinc-800">
+      <header className="bg-black/20 flex justify-between items-center p-5 text-2xl sm:text-[2.5rem] uppercase italic font-black text-shadow border-b border-zinc-800">
         <div className="grid grid-cols-5 gap-2">
           <div className="grid-rows-1">
             <Online />
@@ -44,7 +44,7 @@ const Header = () => {
                   <span className="text-transparent bg-clip-text bg-gradient-to-b from-zinc-500 via-zinc-700 to-zinc-900">com</span>
                 </Link>
             </div>
-            <div className="text-[1.1rem] leading-none tracking-wider space-y-1 shadow-black">
+            <div className="text-[0.6rem] sm:text-[1.1rem] leading-none tracking-wider space-y-1 shadow-black">
               <div className="flex justify-center space-x-2">
                 <span
                   className={

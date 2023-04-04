@@ -5,7 +5,7 @@ const Online = () => {
   return (
     <Link
       href="/stream"
-      className="grid grid-cols-[1fr] w-[78px]"
+      className="grid grid-cols-[1fr] w-[40px] sm:w-[78px]"
       aria-label="Chud Logic"
       title="Chud Logic // STREAMING LIVE ON TWITCH.TV"
     >
@@ -13,14 +13,14 @@ const Online = () => {
         <Image
           src="/cl-logo-web.png"
           alt="Chud Logic"
-          width={78}
-          height={78}
+          width={0}
+          height={0}
           priority
-          className="rounded-full border-2 border-vomit-500 animate-glow p-0 m-0"
+          className="rounded-full border-2 border-vomit-500 animate-glow p-0 m-0 w-10 h-10 sm:w-[78px] sm:h-[78px]"
         />
       </div>
       <div className="row-start-1 col-start-1 z-20 flex items-end justify-center">
-        <div className="bg-red-600 text-white font-semibold py-1 px-1 rounded not-italic text-sm leading-3">LIVE</div>
+        <div className="bg-red-600 text-white font-semibold p-0.5 sm:p-1 rounded not-italic text-[0.6rem] sm:text-sm leading-3">LIVE</div>
       </div>
     </Link>
   );
