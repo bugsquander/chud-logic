@@ -41,12 +41,12 @@ export default function SignedIn({ session }) {
         <Link href="/account" aria-label={username} title={username}>
           <img
             src={avatar_url}
-            className="flex items-center justify-center rounded-full border-2 border-vomit-500 h-6 w-6 sm:w-14 sm:h-14"
+            className="flex items-center justify-center rounded-full border-2 border-vomit-500 h-5 w-5 sm:w-14 sm:h-14"
           ></img>
         </Link>
       </div>
 
-      <div className="text-base">
+      <div className="text-xs sm:text-base text-right">
         <Link
           href="#"
           onClick={() => supabase.auth.signOut()}
