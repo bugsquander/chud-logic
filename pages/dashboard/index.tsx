@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
 import Menu from '@/components/dashboard/menu';
+import MenuUI from '@/components/dashboard/menu/menu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTableCells } from '@fortawesome/free-solid-svg-icons';
 
@@ -22,6 +23,7 @@ export const NestedLayout = ({ children }) => {
     <div className="lg:grid lg:grid-cols-4 gap-5">
       <section className="lg:col-span-3 bg-black/20 rounded-lg p-5 border border-zinc-800">
         {children}
+
       </section>
       <aside>
         <Menu />

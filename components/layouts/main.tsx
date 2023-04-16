@@ -41,10 +41,12 @@ export default function MainLayout({ children, meta: pageMeta }: Props) {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.cardImage} />
       </Head>
+      <div className="bg-black bg-opacity-40">
       <div className="bg-[url('/cartographer.png')] bg-repeat bg-fixed flex flex-col h-screen w-screen">
       <Header />
-      <main id="skip" className="flex-2 overflow-auto bg-gradient-to-t from-[rgba(13,12,12,0.2)] via-[rgba(60,60,60,0.2)] to-[rgba(13,12,12,0.2)] p-5">{children}</main>
+      <main id="skip" className="flex-2 overflow-auto bg-gradient-to-t from-[rgba(13,12,12,0.2)] via-[rgba(60,60,60,0.1)] to-[rgba(13,12,12,0.2)] p-5">{children}</main>
       <Footer />
+      </div>
       </div>
     </>
   );

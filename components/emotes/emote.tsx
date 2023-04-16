@@ -46,6 +46,7 @@ const Emote = ({ emote, onDelete }) => {
           aria-label="Delete Emote"
           title="Delete Emote"
           onClick={handleDelete}
+          className='cursor-pointer'
         />
       </span>
     </div>

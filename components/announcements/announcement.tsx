@@ -1,16 +1,16 @@
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
+import { useSupabaseClient } from '@supabase/auth-helpers-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 const Announcement = ({ announcement, onDelete }) => {
   const supabase = useSupabaseClient();
 
   const handleDelete = async () => {
     const { data, error } = await supabase
-      .from("announcements")
+      .from('announcements')
       .delete()
-      .eq("id", announcement.id)
+      .eq('id', announcement.id)
       .select();
 
     if (error) {
@@ -29,13 +29,19 @@ const Announcement = ({ announcement, onDelete }) => {
       <p>{announcement.created_at}</p>
 
       <Link
-        href={"/announcements/" + announcement.id}
+        href={'/announcements/' + announcement.id}
         aria-label="Edit Announcement"
         title="Edit Announcement"
       >
         <FontAwesomeIcon icon={faPenToSquare} />
       </Link>
-      <FontAwesomeIcon icon={faTrash} onClick={handleDelete} />
+      <FontAwesomeIcon
+        icon={faTrash}
+        title="Delete Announcement"
+        aria-label="Delete Announcement"
+        onClick={handleDelete}
+        className="cursor-pointer"
+      />
     </div>
   );
 };

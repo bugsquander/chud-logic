@@ -18,7 +18,7 @@ export default function Videos({ data }) {
   return (
     <>
       <div
-        className="grid gap-5 sm:grid-cols-[repeat(2,minmax(200px,1fr))] md:grid-cols-[repeat(3,minmax(200px,1fr))] lg:grid-cols-[repeat(4,minmax(200px,1fr))]"
+        className="grid gap-5 md:grid-cols-[repeat(2,minmax(200px,1fr))] lg:grid-cols-[repeat(3,minmax(200px,1fr))] xl:grid-cols-[repeat(4,minmax(200px,1fr))]"
       >
         {data.items.map((item) => {
           const { id, snippet = {} } = item;

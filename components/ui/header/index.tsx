@@ -159,6 +159,7 @@ const Header = () => {
             </div>
           </div>
         </div>
+        
           <Register />
       </header>
     </>

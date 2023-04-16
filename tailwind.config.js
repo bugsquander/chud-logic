@@ -11,8 +11,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        sm: '600px',
-        md: '800px',
+        sm: '361px',
+        md: '560px',
         lg: '1024px',
         xl: '1280px',
         '2xl': '1600px',
@@ -40,7 +40,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-barlow)', ...fontFamily.sans]
-      }
+      },
     }
   },
 };

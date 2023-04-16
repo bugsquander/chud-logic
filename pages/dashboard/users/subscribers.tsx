@@ -2,6 +2,7 @@ import { DashboardPageLayout } from '.';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import Subscribers from '@/components/dashboard/users/subscribers';
+import data from "@/data/data.json";
 
 const UsersSubscribersPage = () => {
   return (
@@ -11,9 +12,7 @@ const UsersSubscribersPage = () => {
         <span>Subscribers</span>
       </div>
 
-      <div>
-        <Subscribers />
-      </div>
+        <Subscribers data={data as any} />
     </>
   );
 };

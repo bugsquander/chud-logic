@@ -3,9 +3,7 @@ import React from 'react';
 import { AppProps } from 'next/app';
 import { SessionContextProvider, Session } from '@supabase/auth-helpers-react';
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
-
 import MainLayout from '@/components/layouts/main';
-
 import { MyUserContextProvider } from '@/utils/useUser';
 import type { Database } from 'types_db';
 
@@ -37,26 +35,31 @@ export default function MyApp({
     document.body.classList?.remove('loading');
   }, []);
 
+
   return (
-    <div className={barlow.className}>
-      <SessionContextProvider
-        supabaseClient={supabaseClient}
-        initialSession={pageProps.initialSession}
-      >
-        <MyUserContextProvider>
-          <MainLayout>
-            <Layout Component={Component} pageProps={pageProps} />
-          </MainLayout>
-        </MyUserContextProvider>
-      </SessionContextProvider>
-    </div>
+      <div className={barlow.className}>
+        <SessionContextProvider
+          supabaseClient={supabaseClient}
+          initialSession={pageProps.initialSession}
+        >
+          <MyUserContextProvider>
+            <MainLayout>
+              <Layout Component={Component} pageProps={pageProps} />
+            </MainLayout>
+          </MyUserContextProvider>
+        </SessionContextProvider>
+      </div>
   );
 }
 
 const Layout = ({ Component, pageProps }) => {
   if (Component.getLayout) {
-    return Component.getLayout(<Component {...pageProps} />);
+    return Component.getLayout(
+        <Component {...pageProps} />
+    );
   } else {
-    return <Component {...pageProps} />;
+    return (
+        <Component {...pageProps} />
+    );
   }
 };
