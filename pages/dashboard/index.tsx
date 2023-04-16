@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
 import Menu from '@/components/dashboard/menu';
-import MenuUI from '@/components/dashboard/menu/menu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTableCells } from '@fortawesome/free-solid-svg-icons';
 
