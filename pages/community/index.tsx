@@ -20,6 +20,7 @@ export async function getStaticProps() {
   const youtube = await fetch(`${YOUTUBE_CHANNELS_API}?part=snippet%2Cstatistics&id=${process.env.YOUTUBE_CHANNEL_ID}&key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`).then((rd) =>
   rd.json()
   );
+
   return {
     props: {
       latest,
@@ -34,11 +35,12 @@ export async function getStaticProps() {
 export default function Community({ latest, about, hot, youtube }) {
   return (
     <>
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-        <div></div>
+      <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         <Youtube latest={latest} about={about} hot={hot} youtube={youtube} />
         <Reddit latest={latest} about={about} hot={hot} />
+<div></div>
       </div>
+      
     </>
   );
 }

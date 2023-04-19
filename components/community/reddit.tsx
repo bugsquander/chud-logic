@@ -25,7 +25,7 @@ export default function Reddit({ latest, about, hot }) {
                 <div className="w-full my-3">
                   <img
                     src={data.mobile_banner_image}
-                    className="object-cover h-[200px] border rounded-lg border-zinc-800"
+                    className="object-cover h-[250px] border rounded-lg border-zinc-800"
                   />
                 </div>
                 <div>

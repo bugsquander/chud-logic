@@ -23,7 +23,7 @@ export default function Videos({ data }) {
         {data.items.map((item) => {
           const { id, snippet = {} } = item;
           const { title, thumbnails = {}, resourceId } = snippet;
-          const { medium = {} } = thumbnails;
+          const { maxres = {} } = thumbnails;
           return (
             <div key={id}>
               <a
@@ -33,7 +33,7 @@ export default function Videos({ data }) {
               >
                 <div>
                   <img
-                    src={medium.url}
+                    src={maxres.url}
                     alt=""
                     className="w-full h-full object-contain block"
                   />
